@@ -14,10 +14,10 @@ import { useParams } from 'react-router'
 export function ArticlePage() {
 	const { slug } = useParams()
 
-	const { data: article, isLoading: isArticleLoading } = useGetArticleBySlug(
+	const { data: article } = useGetArticleBySlug(
 		slug || ''
 	)
-	const { data: articles, isLoading: isArticlesLoading } = useGetArticles()
+	const { data: articles } = useGetArticles()
 
 	if (!article) {
 		return (
